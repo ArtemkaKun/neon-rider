@@ -12,6 +12,6 @@ public class MoveController : MonoBehaviour
 
     void Update()
     {
-        _carRigidbody.AddTorque(-1 * Input.GetAxis("Horizontal") * 75f * Time.fixedDeltaTime);
+        _carRigidbody.AddTorque(-1 * Input.GetAxis("Horizontal") * 100f * Time.fixedDeltaTime);
     }
 }
