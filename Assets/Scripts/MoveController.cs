@@ -1,12 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
+    private Rigidbody2D car_rigidbody;
+
+    private void Start()
+    {
+        car_rigidbody = gameObject.GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        var sphere = gameObject.GetComponent<Rigidbody2D>();
-
-        sphere.AddTorque(-1 * Input.GetAxis("Horizontal") * 75f * Time.fixedDeltaTime);
+        car_rigidbody.AddTorque(-1 * Input.GetAxis("Horizontal") * 75f * Time.fixedDeltaTime);
     }
 }
