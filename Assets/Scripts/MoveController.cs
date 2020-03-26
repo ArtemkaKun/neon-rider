@@ -10,8 +10,9 @@ public class MoveController : MonoBehaviour
         _carRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        _carRigidbody.AddTorque(-1 * Input.GetAxis("Horizontal") * 100f * Time.fixedDeltaTime);
+        _carRigidbody.angularVelocity += -1 * Input.GetAxis("Horizontal") * 150f;
+        //_carRigidbody.AddTorque(-1 * Input.GetAxis("Horizontal") * 150f);
     }
 }
